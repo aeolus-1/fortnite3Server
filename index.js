@@ -216,7 +216,7 @@ function cChunk(e, t) {
         (this.pos = e);
 }
 ;
-let startingSize = 5;
+var startingSize = 5;
 
 class Chunks {
     constructor(options) {
@@ -323,6 +323,7 @@ io.on('connection', async(socket) => {
     socket.on('test', (data) => {
         
         io.sockets.emit("testReturn", {num:"working"})
+        io.sockets.emit("testReturn", {num:"working2"})
         io.sockets.emit("testReturn", {num:Math.floor(1.4)})
         io.sockets.emit("testReturn", {num:new Chunks()})
 
