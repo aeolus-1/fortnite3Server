@@ -27,7 +27,7 @@ io.on('connection', async(socket) => {
 
     socket.on('test', (data) => {
         
-        io.sockets.emit("testReturn", v(0,1))
+        io.sockets.emit("testReturn", {num:num})
 
     });
 
