@@ -322,10 +322,8 @@ io.on('connection', async(socket) => {
 
     socket.on('test', (data) => {
         
-        io.sockets.emit("testReturn", {num:"working"})
-        io.sockets.emit("testReturn", {num:"working2"})
-        io.sockets.emit("testReturn", {num:Math.floor(1.4)})
-        io.sockets.emit("testReturn", {num:new Chunks()})
+        io.sockets.emit("testReturn", {num:"working33"})
+       
 
 
     });
