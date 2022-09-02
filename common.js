@@ -1,7 +1,7 @@
 function v(x=0, y=0) {
     return {x:x,y:y}
 }
-var num = 39
+
 function rotate(t, n, e) {
     var r = e,
       o = Math.cos(r),
