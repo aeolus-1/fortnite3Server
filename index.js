@@ -17,12 +17,6 @@ app.get('/', (req, res) => {
 
 
 
-var yay = {
-    num:76,
-    p:yay,
-}
-
-
 
 
 
@@ -33,7 +27,7 @@ io.on('connection', async(socket) => {
 
     socket.on('test', (data) => {
         
-        io.sockets.emit("testReturn", yay)
+        io.sockets.emit("testReturn", v(0,1))
 
     });
 

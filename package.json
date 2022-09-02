@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "start": "node .",
-        "deploy": "git add . && git commit -am 'deploy' && git push heroku main"
+        "deploy": "git add . && git commit -am 'deploy' && git push heroku main",
+        "common": "node common.js"
     },
     "keywords": [],
     "author": "",
