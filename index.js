@@ -312,7 +312,7 @@ class Chunks {
 
 
 
-
+console.log(new Chunks())
 
 
 
@@ -322,7 +322,7 @@ io.on('connection', async(socket) => {
 
     socket.on('test', (data) => {
         
-        io.sockets.emit("testReturn", {num:v(5.5,2)})
+        io.sockets.emit("testReturn", {num:new Chunks({})})
        
 
 
