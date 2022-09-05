@@ -14,6 +14,8 @@ app.get('/', (req, res) => {
     res.send('server');
 });
 
+const mob = require('./mob.js')
+
 
 if (true) {
     function v(x=0, y=0) {
@@ -309,7 +311,7 @@ class Chunks {
 
 
 console.log("indexYay")
-console.log(yay())
+console.log(mob.yay())
 var mainLobby = new Chunks()
 
 
