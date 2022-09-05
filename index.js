@@ -308,10 +308,9 @@ class Chunks {
 };
 
 
-
-
-
-console.log(new Chunks())
+console.log("yay")
+console.log()
+var mainLobby = new Chunks()
 
 
 
@@ -319,9 +318,20 @@ console.log(new Chunks())
 
 io.on('connection', async(socket) => {
 
-    socket.on('test', (data) => {
+    socket.on('requestServer', (data) => {
         
-        io.sockets.emit("testReturn", {num:new Chunks()})
+        io.sockets.emit("testReturn", {server:mainLobby})
+       
+
+
+    });
+
+    socket.on('createPlayer', (data) => {
+        
+        var player = data.player, 
+            playerId = player.id
+
+        
        
 
 

@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "node .",
+        "common": "node common.js",
         "deploy": "git add . && git commit -am 'deploy' && git push heroku main"
     },
     "keywords": [],
