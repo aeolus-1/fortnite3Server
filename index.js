@@ -322,7 +322,7 @@ io.on('connection', async(socket) => {
 
     socket.on('test', (data) => {
         
-        io.sockets.emit("testReturn", {num:"working33"})
+        io.sockets.emit("testReturn", {num:5})
        
 
 
