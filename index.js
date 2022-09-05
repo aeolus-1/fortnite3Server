@@ -115,7 +115,7 @@ if (true) {
     
     var nextId = 0
     function newId() {
-        return self.crypto.randomUUID()
+        return '${Math.random()}'
     }
     
     function randInt(min, max) {
