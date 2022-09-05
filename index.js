@@ -308,8 +308,8 @@ class Chunks {
 };
 
 
-console.log("yay")
-console.log()
+console.log("indexYay")
+console.log(yay())
 var mainLobby = new Chunks()
 
 
