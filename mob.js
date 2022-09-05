@@ -1,4 +1,4 @@
-exports = {
+exports.mob = {
     yay() {
         return 54
     },

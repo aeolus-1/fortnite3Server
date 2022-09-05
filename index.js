@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     res.send('server');
 });
 
-const mob = require("./mob.js")
+const mob = require("./mob.js").mob
 
 
 if (true) {
@@ -169,7 +169,6 @@ function tileArray2d(e, t, n, r, c) {
     }
     return a;
 }
-
 function getTileValue(x, y) {
 
 
@@ -202,7 +201,6 @@ t < -5 && (Math.floor(t)%25===0  Math.floor(t+1)%25===0  Math.floor(t+2)%25===0)
     e > 9.9  e < -10  t > 9.9 ? this.type = "water" : (t > 6.9 ? this.type = "wasteland" : this.type = "grass")
 */
 }
-
 function cTile(e, t, n = !0) {
     this.pos = v(e, t)
     this.type = getTileValue(e, t)
@@ -311,7 +309,7 @@ class Chunks {
 
 
 console.log("indexYay")
-console.log(mob)
+console.log(mob.yay())
 var mainLobby = new Chunks()
 
 
