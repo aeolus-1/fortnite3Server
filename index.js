@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     res.send('server');
 });
 
-const mob = require('./mob.js')
+const mob = require('mob.js')
 
 
 if (true) {
