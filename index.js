@@ -134,7 +134,6 @@ if (true) {
 }
 
 
-if (true) {
 
 
 // Mobiles will require
@@ -308,7 +307,7 @@ class Chunks {
     }
 };
 
-}
+
 
 
 
