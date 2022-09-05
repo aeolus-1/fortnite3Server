@@ -311,7 +311,7 @@ class Chunks {
 
 
 console.log("indexYay")
-console.log(mob.yay())
+console.log(mob)
 var mainLobby = new Chunks()
 
 
