@@ -16,17 +16,15 @@ app.get('/', (req, res) => {
 
 var GameState = require("./Game.js").GameState
 
-console.log(GameState)
-
 var lobbys = {}
 
-function createLobby() {
-    var newId = `${Math.random()}`,
+function createLobby(id=`${Math.random()}`) {
+    var newId = id,
         newLobby = {
             id:newId,
             created:(new Date().getTime()),
 
-            state:1,
+            state:new GameState.gameState,
         }
 
     lobbys[newId] = newLobby
@@ -42,7 +40,7 @@ function updateLobbys() {
         const id = lobbysId[i],
             lobby = lobbys[id]
 
-        if ((new Date().getTime())-lobby.created > (60)*1000) {
+        if ((new Date().getTime())-lobby.created > (10)*(60)*1000) {
             delete lobbys[id]
             console.log("deleted lobby", id)
         }
@@ -56,7 +54,18 @@ setInterval(updateLobbys, 500)
 io.on('connection', async(socket) => {
 
     socket.on('createLobby', (data) => {
-        createLobby()
+        createLobby(data.id)
+       
+
+
+    });
+    socket.on('requestLobby', (data) => {
+        if (lobbys[data.id] != undefined) {
+            socket.emit("returnLobby", lobbys[data.id])
+            console.log("sending back lobby")
+        } else {
+            console.log("requested unkown lobby")
+        }
        
 
 
