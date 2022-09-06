@@ -95,7 +95,14 @@ io.on('connection', async(socket) => {
                 socket.emit("returnLobby", lobbys[data.id])
 
             } else {
-                console.log("requested unquthorished lobby")
+                if (lobby.p2 == undefined) {
+                    lobby.p2 = data.clientId
+                    socket.emit("returnLobby", lobbys[data.id])
+
+                } else {
+                    console.log("requested unquthorished lobby")
+
+                }
             }
 
         } else {
