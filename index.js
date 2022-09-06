@@ -24,7 +24,7 @@ function createLobby() {
             created:(new Date().getTime()),
         }
 
-    lobbys[newId] = newLobbys
+    lobbys[newId] = newLobby
     console.log("created lobby", id)
 
     return newLobby
