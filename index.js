@@ -117,7 +117,7 @@ io.on('connection', async(socket) => {
 
     });
     socket.on('submitMove', (data) => {
-=        submitMove(data.lobby, data.clientId, data.pos)
+        submitMove(data.lobby, data.clientId, data.pos)
        
 
 
