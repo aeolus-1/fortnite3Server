@@ -1,3 +1,38 @@
+let depDim = {
+    width:110,
+    height:133,
+    xGap:8.5
+}
+var hitboxes = [
+    {x:-470.5,y:-255,width:110,height:510,pos:0},
+]
+
+hitboxes.push(    {x:360.5,y:-255,width:110,height:510,pos:7},
+    )
+for (let i = 0; i < 6; i++) {
+    hitboxes.push({
+        x:-352+(i*(depDim.width+depDim.xGap)),
+        y:-255,
+        width:110,
+        height:133,
+        pos:i+1,
+    
+    })
+    
+    hitboxes.push({
+            x:-352+(i*(depDim.width+depDim.xGap)),
+            y:122,
+            width:110,
+            height:133,
+            pos:13-i,
+        })
+}
+
+
+hitboxes = hitboxes.sort((a,b)=>{return Math.sign(a.pos-b.pos)})
+
+
+
 exports.GameState = {
     gameState:class {
         constructor(){
