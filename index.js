@@ -37,7 +37,7 @@ function updateLobbys() {
         const id = lobbysId[i],
             lobby = lobbys[id]
 
-        if ((new Date().getTime())-lobby.created > 10000) {
+        if ((new Date().getTime())-lobby.created > (60)*1000) {
             delete lobbys[id]
             console.log("deleted lobby", id)
         }
