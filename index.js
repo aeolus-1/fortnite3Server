@@ -42,11 +42,9 @@ function createLobby(id=`${Math.random()}`, clId) {
 function submitMove(lobby, clId, pos) {
     var lobby = lobbys[lobby]
     if (lobby != undefined) {
-        console.log("verifying", [lobby.p1,lobby.p2][lobby.turn], clId)
         if ([lobby.p1,lobby.p2][lobby.turn] == clId) {
             GameState.moveTokens(lobby.state, pos)
             lobby.turn = (lobby.turn+1)%2
-            console.log("new turn", lobby.turn)
         }
     }
 }
@@ -76,6 +74,12 @@ io.on('connection', async(socket) => {
 
 
     });
+    socket.on('requestAllLobbys', () => {
+        socket.emit("allLobbys", lobbys)
+       
+
+
+    });
     socket.on('deleteLobby', (data) => {
         if (lobbys[data.id] != undefined) {
 
@@ -101,7 +105,6 @@ io.on('connection', async(socket) => {
                     socket.emit("returnLobby", {state:lobbys[data.id], turn:[lobby.p1,lobby.p2][lobby.turn] == data.clientId})
 
                 } else {
-                    console.log("requested unquthorished lobby")
 
                 }
             }
@@ -114,8 +117,7 @@ io.on('connection', async(socket) => {
 
     });
     socket.on('submitMove', (data) => {
-        console.log("making Move", data)
-        submitMove(data.lobby, data.clientId, data.pos)
+=        submitMove(data.lobby, data.clientId, data.pos)
        
 
 
