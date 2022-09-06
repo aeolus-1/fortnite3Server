@@ -5,6 +5,27 @@ exports.GameState = {
             this.turn = 0
     
             this.gameTokens = new Array()
+
+
+
+
+            for (let i = 0; i < 6; i++) {
+                for (let j = 0; j < 4; j++) {
+                    GameState.addToken(this, i+1)
+    
+                }
+            }
+            for (let i = 0; i < 6; i++) {
+                for (let j = 0; j < 4; j++) {
+                    GameState.addToken(this, i+8)
+    
+                }
+            }
+
+
+
+
+
         }
     },
     addToken(state, dep) {
