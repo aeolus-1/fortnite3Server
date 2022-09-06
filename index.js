@@ -91,7 +91,6 @@ io.on('connection', async(socket) => {
             var lobby = lobbys[data.id]
             if (lobby.p1 == data.clientId || lobby.p2 == data.clientId) {
                 socket.emit("returnLobby", lobbys[data.id])
-                console.log("sending back lobby")
 
             } else {
                 console.log("requested unquthorished lobby")
@@ -105,6 +104,7 @@ io.on('connection', async(socket) => {
 
     });
     socket.on('submitMove', (data) => {
+        console.log("making Move", data)
         submitMove(data.lobby, data.clientId, data.pos)
        
 
