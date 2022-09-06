@@ -99,7 +99,7 @@ io.on('connection', async(socket) => {
             }
 
         } else {
-            console.log("requested unkown lobby")
+            createLobby(data.id, data.clientId)
         }
        
 
