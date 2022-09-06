@@ -14,6 +14,9 @@ app.get('/', (req, res) => {
     res.send('server');
 });
 
+var GameState = require("./Game.js").GameState
+
+console.log(GameState)
 
 var lobbys = {}
 
@@ -22,6 +25,8 @@ function createLobby() {
         newLobby = {
             id:newId,
             created:(new Date().getTime()),
+
+            state:1,
         }
 
     lobbys[newId] = newLobby
