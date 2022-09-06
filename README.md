@@ -1,2 +1,3 @@
 # fortnite3Server
-idk
+its not actually for fortnite3<br>
+its for mancala
