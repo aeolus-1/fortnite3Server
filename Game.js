@@ -32,6 +32,15 @@ for (let i = 0; i < 6; i++) {
 hitboxes = hitboxes.sort((a,b)=>{return Math.sign(a.pos-b.pos)})
 
 
+class gameToken {
+    constructor(x, y) {
+        this.pos = {x:x,y:y}
+        this.target = {...this.pos}
+
+        this.id = `${Math.random()}`
+    }
+}
+
 
 exports.GameState = {
     gameState:class {
