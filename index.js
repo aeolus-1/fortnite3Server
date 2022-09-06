@@ -93,12 +93,12 @@ io.on('connection', async(socket) => {
 
             var lobby = lobbys[data.id]
             if (lobby.p1 == data.clientId || lobby.p2 == data.clientId) {
-                socket.emit("returnLobby", lobbys[data.id])
+                socket.emit("returnLobby", {state:lobbys[data.id], turn:[lobby.p1,lobby.p2][lobby.turn] == clId})
 
             } else {
                 if (lobby.p2 == undefined) {
                     lobby.p2 = data.clientId
-                    socket.emit("returnLobby", lobbys[data.id])
+                    socket.emit("returnLobby", {state:lobbys[data.id], turn:[lobby.p1,lobby.p2][lobby.turn] == clId})
 
                 } else {
                     console.log("requested unquthorished lobby")
