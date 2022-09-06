@@ -42,6 +42,7 @@ function createLobby(id=`${Math.random()}`, clId) {
 function submitMove(lobby, clId, pos) {
     var lobby = lobbys[lobby]
     if (lobby != undefined) {
+        console.log("verifying", [lobby.p1,lobby.p2][lobby.turn], clId)
         if ([lobby.p1,lobby.p2][lobby.turn] == clId) {
             GameState.moveTokens(lobby.state, pos)
         }
