@@ -46,6 +46,7 @@ function submitMove(lobby, clId, pos) {
         if ([lobby.p1,lobby.p2][lobby.turn] == clId) {
             GameState.moveTokens(lobby.state, pos)
             lobby.turn = (lobby.turn+1)%2
+            console.log("new turn", lobby.turn)
         }
     }
 }
