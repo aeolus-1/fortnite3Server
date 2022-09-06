@@ -7,17 +7,25 @@ exports.GameState = {
             this.gameTokens = new Array()
 
 
+            function a(s, d) {
+                    var hitbox = hitboxes[d],
+                    pos = {x:hitbox.x+(hitbox.width/2),y:hitbox.y+(hitbox.height/2)}
 
+                var newToken = new gameToken(pos.x,pos.y)
+
+                s.gameTokens.push(newToken)
+                s.deps[d].push(newToken)
+            }
 
             for (let i = 0; i < 6; i++) {
                 for (let j = 0; j < 4; j++) {
-                    GameState.addToken(this, i+1)
+                    s(this, i+1)
     
                 }
             }
             for (let i = 0; i < 6; i++) {
                 for (let j = 0; j < 4; j++) {
-                    GameState.addToken(this, i+8)
+                    s(this, i+8)
     
                 }
             }
