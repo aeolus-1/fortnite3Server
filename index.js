@@ -25,7 +25,7 @@ function createLobby() {
         }
 
     lobbys[newId] = newLobby
-    console.log("created lobby", id)
+    console.log("created lobby", newId)
 
     return newLobby
 
