@@ -96,12 +96,13 @@ exports.GameState = {
             l = 0
         for (let i = 0; i < tokens.length; i++,l++) {
             const token = tokens[i];
-            console.log(token)
             var targetDep = (dep+l+1)%14,
                 hitbox = hitboxes[targetDep]
 
 
             token.target = {x:hitbox.x+(hitbox.width/2),y:hitbox.y+(hitbox.height/2)}
+            console.log(token)
+
             for (let j = 0; j < tokens.length; j++) {
                 if (tokens[j].id == token.id) {
                     tokens.splice(j, 1)
