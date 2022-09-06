@@ -19,13 +19,13 @@ exports.GameState = {
 
             for (let i = 0; i < 6; i++) {
                 for (let j = 0; j < 4; j++) {
-                    s(this, i+1)
+                    a(this, i+1)
     
                 }
             }
             for (let i = 0; i < 6; i++) {
                 for (let j = 0; j < 4; j++) {
-                    s(this, i+8)
+                    a(this, i+8)
     
                 }
             }
