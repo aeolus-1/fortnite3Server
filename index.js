@@ -37,13 +37,15 @@ function updateLobbys() {
         const id = lobbysId[i],
             lobby = lobbys[id]
 
-        if ((new Date().getTime())-lobbys.created > 10000) {
+        if ((new Date().getTime())-lobby.created > 10000) {
             delete lobbys[id]
             console.log("deleted lobby", id)
         }
         
     }
 }
+
+setInterval(updateLobbys, 500)
 
 
 io.on('connection', async(socket) => {
