@@ -105,7 +105,7 @@ io.on('connection', async(socket) => {
                     socket.emit("returnLobby", {state:lobbys[data.id], turn:[lobby.p1,lobby.p2][lobby.turn] == data.clientId,  player:(lobby.p1 == data.clientId)?1:2})
 
                 } else {
-
+                    socket.emit("responseCode", {clientId:data.clientId, code:"lobbyFull"})
                 }
             }
 
