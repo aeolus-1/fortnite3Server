@@ -42,7 +42,7 @@ function createLobby(id=`${Math.random()}`, clId) {
 function submitMove(lobby, clId, pos) {
     var lobby = lobbys[lobby]
     if (lobby != undefined) {
-        if ([lobby.p1,lobby.p2][lobby.turn] == clId && pos != 0 && pos != 8) {
+        if ([lobby.p1,lobby.p2][lobby.turn] == clId && pos != 0 && pos != 7) {
             GameState.moveTokens(lobby.state, pos)
             lobby.turn = (lobby.turn+1)%2
         }
