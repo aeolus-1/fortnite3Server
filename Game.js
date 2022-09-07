@@ -60,6 +60,8 @@ exports.GameState = {
 
                 var newToken = new gameToken(pos.x,pos.y, dep)
 
+                newToken.dep = d
+
                 s.gameTokens.push(newToken)
                 s.deps[d].push(newToken)
             }
