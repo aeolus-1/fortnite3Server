@@ -54,7 +54,12 @@ function updateLobbys() {
         const id = lobbysId[i],
             lobby = lobbys[id]
 
-        if ((new Date().getTime())-lobby.created > (15)*(60)*1000) {
+        if (
+            (new Date().getTime())-lobby.created > (15)*(60)*1000 ||
+
+            (lobby.p1 == undefined && lobby.p2 == undefined)
+        
+        ) {
             delete lobbys[id]
             console.log("deleted lobby", id)
         }
@@ -122,6 +127,19 @@ io.on('connection', async(socket) => {
 
 
     });
+
+    socket.on('leaveLobby', (data) => {
+        if (lobbys[data.lobby]) {
+            console.log("left", data)
+            var lobby = lobbys[data.lobby]
+            if (lobby.p1 == data.clientId) {
+                lobby.p1 = lobby.p2
+                lobby.p2 = undefined
+            } else if (lobby.p2 == data.clientId) {
+                lobby.p2 = undefined
+            }
+        }
+    })
 
     
 
