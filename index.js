@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const http = require('http');
-var CryptoJS = require("crypto-js");
 const server = http.createServer(app);
 
 const io = require("socket.io")(server, {
@@ -55,7 +54,7 @@ function updateLobbys() {
         const id = lobbysId[i],
             lobby = lobbys[id]
 
-        if ((new Date().getTime())-lobby.created > (10)*(60)*1000) {
+        if ((new Date().getTime())-lobby.created > (15)*(60)*1000) {
             delete lobbys[id]
             console.log("deleted lobby", id)
         }
@@ -96,6 +95,7 @@ io.on('connection', async(socket) => {
         if (lobbys[data.id] != undefined) {
 
             var lobby = lobbys[data.id]
+            lobby.created = (new Date().getTime())
             if (lobby.p1 == data.clientId || lobby.p2 == data.clientId) {
                 socket.emit("returnLobby", {state:lobbys[data.id], turn:[lobby.p1,lobby.p2][lobby.turn] == data.clientId})
 
