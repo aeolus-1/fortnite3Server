@@ -89,7 +89,7 @@ exports.GameState = {
             pos = {x:hitbox.x+(hitbox.width/2),y:hitbox.y+(hitbox.height/2)}
 
         var newToken = new gameToken(pos.x,pos.y, dep)
-
+        console.log(dep)
 
 
         state.gameTokens.push(newToken)
