@@ -58,7 +58,7 @@ exports.GameState = {
                     var hitbox = hitboxes[d],
                     pos = {x:hitbox.x+(hitbox.width/2),y:hitbox.y+(hitbox.height/2)}
 
-                var newToken = new gameToken(pos.x,pos.y, dep)
+                var newToken = new gameToken(pos.x,pos.y, d)
 
                 newToken.dep = d
 
