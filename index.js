@@ -97,12 +97,12 @@ io.on('connection', async(socket) => {
             var lobby = lobbys[data.id]
             lobby.created = (new Date().getTime())
             if (lobby.p1 == data.clientId || lobby.p2 == data.clientId) {
-                socket.emit("returnLobby", {state:lobbys[data.id], turn:[lobby.p1,lobby.p2][lobby.turn] == data.clientId})
+                socket.emit("returnLobby", {state:lobbys[data.id], turn:[lobby.p1,lobby.p2][lobby.turn] == data.clientId, player:(lobby.p1 == data.clientId)?1:2})
 
             } else {
                 if (lobby.p2 == undefined) {
                     lobby.p2 = data.clientId
-                    socket.emit("returnLobby", {state:lobbys[data.id], turn:[lobby.p1,lobby.p2][lobby.turn] == data.clientId})
+                    socket.emit("returnLobby", {state:lobbys[data.id], turn:[lobby.p1,lobby.p2][lobby.turn] == data.clientId,  player:(lobby.p1 == data.clientId)?1:2})
 
                 } else {
 
