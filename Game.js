@@ -36,6 +36,7 @@ class gameToken {
     constructor(x, y) {
         this.pos = {x:x,y:y}
         this.target = {...this.pos}
+        
 
         this.id = `${Math.random()}`
     }
@@ -87,6 +88,9 @@ exports.GameState = {
 
         var newToken = new gameToken(pos.x,pos.y)
 
+        newToken.dep = dep
+
+
         state.gameTokens.push(newToken)
         state.deps[dep].push(newToken)
 
@@ -101,7 +105,8 @@ exports.GameState = {
 
 
             token.target = {x:hitbox.x+(hitbox.width/2),y:hitbox.y+(hitbox.height/2)}
-            console.log(token)
+            token.dep = targetDep
+
 
             for (let j = 0; j < tokens.length; j++) {
                 if (tokens[j].id == token.id) {
