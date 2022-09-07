@@ -33,9 +33,11 @@ hitboxes = hitboxes.sort((a,b)=>{return Math.sign(a.pos-b.pos)})
 
 
 class gameToken {
-    constructor(x, y) {
+    constructor(x, y, dep) {
         this.pos = {x:x,y:y}
         this.target = {...this.pos}
+
+        this.dep = dep
         
 
         this.id = `${Math.random()}`
@@ -86,9 +88,8 @@ exports.GameState = {
         var hitbox = hitboxes[dep],
             pos = {x:hitbox.x+(hitbox.width/2),y:hitbox.y+(hitbox.height/2)}
 
-        var newToken = new gameToken(pos.x,pos.y)
+        var newToken = new gameToken(pos.x,pos.y, dep)
 
-        newToken.dep = dep
 
 
         state.gameTokens.push(newToken)
