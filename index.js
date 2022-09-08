@@ -55,7 +55,7 @@ function updateLobbys() {
             lobby = lobbys[id]
 
         if (
-            (new Date().getTime())-lobby.created > (15)*(60)*1000 ||
+            (new Date().getTime())-lobby.created > (3)*(60)*1000 ||
 
             (lobby.p1 == undefined && lobby.p2 == undefined)
         
