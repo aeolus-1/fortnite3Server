@@ -1,3 +1,8 @@
+function c(e) {return JSON.parse(JSON.stringify(e))}
+function sO(t, n) {
+    return ((t % n) + n) % n;
+  }
+
 let depDim = {
     width:110,
     height:133,
