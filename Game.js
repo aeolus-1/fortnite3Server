@@ -136,7 +136,6 @@ exports.GameState = {
         if (moveTokensRule) {
             var opp = sO(14-endDep, 14),
                 oppDep = state.deps[opp]
-                console.log("move", opp)
             
             for (let i = 0; i < oppDep.length; i++) {
                 const token = oppDep[i];
