@@ -42,7 +42,7 @@ function submitMove(lobby, clId, pos) {
     var lobby = lobbys[lobby]
     if (lobby != undefined) {
         if ([lobby.p1,lobby.p2][lobby.turn] == clId && pos != 0 && pos != 7) {
-            lobby.turn = GameState.moveTokens(lobby.state, pos)
+            lobby.turn = GameState.moveTokens(lobby.state, pos).turn
         }
     }
 }
