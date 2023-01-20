@@ -13,8 +13,11 @@ app.get('/', (req, res) => {
     res.send('server');
 });
 
+const clashApi = require('clash-of-clans-api')
 
-console.log("im alive")
+
+
+console.log("im aliv plz")
 
 
 server.listen(process.env.PORT || 3000, () => {
